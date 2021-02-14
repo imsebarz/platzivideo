@@ -7,9 +7,11 @@ import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
 import Footer from "../components/Footer";
 import useInitialiState from "../hooks/useInitialState";
+require("dotenv").config();
 
 const App = () => {
-  const API = "http://localhost:3000/initialState";
+  const API = `
+  https://api.themoviedb.org/3/movie`;
   const initialState = useInitialiState(API);
   const [myList, setMyList] = useState(initialState.myList);
   return (
@@ -25,16 +27,16 @@ const App = () => {
       ) : (
         ""
       )}
-      <Categories title="Tendencias">
+      <Categories title="Populares">
         <Carousel>
-          {initialState?.trends?.map((item) => (
+          {initialState?.popular?.slice(0, 6).map((item) => (
             <CarouselItem key={item.id} {...item} />
           ))}
         </Carousel>
       </Categories>
-      <Categories title="Originales de PlatziVideo">
+      <Categories title="Mejores Rankeadas">
         <Carousel>
-          {initialState?.originals?.map((item) => (
+          {initialState?.topRated?.slice(0, 6).map((item) => (
             <CarouselItem key={item.id} {...item} />
           ))}
         </Carousel>

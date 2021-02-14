@@ -3,16 +3,13 @@ import "../assets/styles/components/CarouselItem.scss";
 import PlayIcon from "../assets/static/play-icon.png";
 import PlusIcon from "../assets/static/plus-icon.png";
 
-const CarouselItem = ({
-  title,
-  year,
-  cover,
-  duration,
-  description,
-  contentRating,
-}) => (
+const CarouselItem = ({ title, poster_path, release_date, vote_average }) => (
   <div className="carousel-item">
-    <img className="carousel-item__img" src={cover} alt={title} />
+    <img
+      className="carousel-item__img"
+      src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+      alt={title}
+    />
     <div className="carousel-item__details">
       <div>
         <img
@@ -27,7 +24,7 @@ const CarouselItem = ({
         />
       </div>
       <p className="carousel-item__details--title">{title}</p>
-      <p className="carousel-item__details--subtitle">{`${year} ${contentRating} ${duration}`}</p>
+      <p className="carousel-item__details--subtitle">{`📅 - ${release_date} ⭐ - ${vote_average}`}</p>
     </div>
   </div>
 );
