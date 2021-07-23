@@ -1,6 +1,7 @@
 # platzivideo
 
-Empty project.
+Video streaming platform Homepage. The site is build on ReactJS and bundled using Parcel
+
 
 ## Building and running on localhost
 
@@ -25,8 +26,3 @@ npm run build-prod
 ## Running
 
 Open the file `dist/index.html` in your browser
-
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
-
