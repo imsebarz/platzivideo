@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../assets/styles/App.scss";
 import Header from "../components/Header";
 import Search from "../components/Search";
